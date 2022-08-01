@@ -1,3 +1,8 @@
+//Author: Animesh Rastogi
+//Email: animesh.rastogi@utexas.edu
+//M.S. student - Civil Engineering [Computational Mechanics]
+//The University of Texas at Austin
+
 #include <iostream>
 #include <vector>
 #include <Eigen/Core>
