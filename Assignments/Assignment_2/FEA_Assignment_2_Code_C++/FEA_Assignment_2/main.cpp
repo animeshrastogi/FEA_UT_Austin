@@ -25,6 +25,8 @@ public:
     double L;       //Lenght of the bar
     double E;       //Young's modulus
     double A;       //Area of cross-section
+    
+    oned_finite_element();
     void initialize();
     double shape_fun(double, int);
     double gauss_point(int);
@@ -32,6 +34,15 @@ public:
     void solve();
     void write_output();
 };
+
+//Constructor
+oned_finite_element::oned_finite_element(){
+    Force = 1.0;
+    nel = 2;
+    L = 1.0;
+    E = 1.0;
+    A = 1.0;
+}
 
 //Function to initialize the dependent parameters and the matrices/vectors
 void oned_finite_element::initialize(){
@@ -110,11 +121,7 @@ void oned_finite_element::solve(){
 
 int main(int argc, const char * argv[]) {
     oned_finite_element fea;
-    fea.nel = 2;
-    fea.Force = 1;
-    fea.A = 1.0;
-    fea.E = 1.0;
-    fea.L = 1.0;
+    fea.nel = 5;
     fea.initialize();
     fea.assemble();
     fea.solve();
